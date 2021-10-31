@@ -1,9 +1,11 @@
 import type { NextPage } from 'next'
 
-const Home: NextPage = (props) => {
+const Home: NextPage = () => {
   return (
-    <div>
-      <h1>Hello, World!</h1>
+    <div className="mt-4">
+      <h1 className="text-center text-5xl">
+        Hello, World!
+      </h1>
     </div>
   )
 }
