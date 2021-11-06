@@ -11,6 +11,8 @@
 		"editor.tabSize": 2,
 		"cSpell.words": [
 			"tailwindcss"
-		]
+		],
+		"editor.defaultFormatter": "esbenp.prettier-vscode",
+		"editor.formatOnSave": true
 	}
 }
