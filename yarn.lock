@@ -116,6 +116,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@fontsource/jetbrains-mono@npm:^4.5.0":
+  version: 4.5.0
+  resolution: "@fontsource/jetbrains-mono@npm:4.5.0"
+  checksum: 3de42f6f26506e597026c2460e9f34dc002cb8b34d7e04871ad0d2a15f277d087170ab9e0604176d23ae4ec90fefe2730660672b6b9ffd7f4cc8335ead11e134
+  languageName: node
+  linkType: hard
+
 "@gar/promisify@npm:^1.0.1":
   version: 1.1.2
   resolution: "@gar/promisify@npm:1.1.2"
@@ -2946,6 +2953,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "joshward-dev-site@workspace:."
   dependencies:
+    "@fontsource/jetbrains-mono": ^4.5.0
     "@types/react": 17.0.32
     autoprefixer: ^10.4.0
     eslint: 7.32.0
