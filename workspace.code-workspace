@@ -1,18 +1,23 @@
 {
-	"folders": [
-		{
-			"path": "."
-		}
-	],
-	"settings": {
-		"files.exclude": {
-			"node_modules": true
-		},
-		"editor.tabSize": 2,
-		"cSpell.words": [
-			"tailwindcss"
-		],
-		"editor.defaultFormatter": "esbenp.prettier-vscode",
-		"editor.formatOnSave": true
-	}
+  "folders": [
+    {
+      "path": "."
+    }
+  ],
+  "settings": {
+    "files.exclude": {
+      "node_modules": true
+    },
+    "editor.tabSize": 2,
+    "cSpell.words": [
+      "clsx",
+      "fontsource",
+      "jetbrains",
+      "joshward",
+      "svgr",
+      "tailwindcss"
+    ],
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  }
 }
