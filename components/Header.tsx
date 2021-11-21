@@ -9,11 +9,12 @@ const Header: React.VFC = () => {
     <div
       className="
         w-full
-        md:h-screen
+        min-h-screen
         p-12
         flex
         flex-col
         justify-around
+        space-y-2
       "
     >
       <div className="flex md:space-x-8 items-center justify-center flex-col md:flex-row">
