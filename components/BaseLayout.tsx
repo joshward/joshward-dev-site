@@ -1,18 +1,14 @@
-import type { NextPage } from 'next'
 import Head from 'next/head'
-import Header from '../components/Header'
 
-const Home: NextPage = () => {
+const BaseLayout: React.FC = ({ children }) => {
   return (
     <div
       className="
-        bg-gray-800
-        text-gray-50
-        min-h-screen
+        font-mono
+        selection:bg-indigo-300 selection:text-gray-800
       "
     >
       <Head>
-        <title>Josh Ward</title>
         <link
           rel="apple-touch-icon"
           sizes="180x180"
@@ -32,9 +28,9 @@ const Home: NextPage = () => {
         ></link>
         <link rel="manifest" href="/site.webmanifest"></link>
       </Head>
-      <Header />
+      {children}
     </div>
   )
 }
 
-export default Home
+export default BaseLayout

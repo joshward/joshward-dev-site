@@ -36,8 +36,13 @@ const Header: React.VFC = () => {
           </p>
           <p className="pt-2 text-2xl">
             I&apos;m also a{' '}
-            <span className="text-indigo-300">board game addict</span>,{' '}
-            <span className="text-indigo-200">beer enthusiast</span>, and{' '}
+            <a
+              href="https://games.joshward.dev"
+              className="text-indigo-300 hover:text-indigo-400 border-b border-dashed border-indigo-300 hover:border-indigo-400"
+            >
+              board game addict
+            </a>
+            , <span className="text-indigo-200">beer enthusiast</span>, and{' '}
             <span className="text-indigo-100">practiced air drummer</span>.
           </p>
           <p className="pt-2 text-2xl">
