@@ -1,6 +1,7 @@
 import { ParsedUrlQuery } from 'querystring'
 import { GetStaticPaths, GetStaticProps } from 'next'
 import { getAllPosts, getPostContent } from '../../lib/blog-api'
+import Blog from '../../components/Blog'
 
 interface PostParams extends ParsedUrlQuery {
   slug: string
@@ -11,7 +12,7 @@ interface PostProps {
 }
 
 const Post: React.VFC<PostProps> = (props) => {
-  return <p>{props.text}</p>
+  return <Blog contents={props.text} />
 }
 
 export default Post
