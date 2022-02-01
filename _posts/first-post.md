@@ -1,3 +1,9 @@
+---
+title: My First Post
+publishedDate: '1/24/2022'
+excerpt: Hello, World
+---
+
 Hello, this is my first post.This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started

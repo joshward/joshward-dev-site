@@ -1,6 +1,6 @@
 import { ParsedUrlQuery } from 'querystring'
 import { GetStaticPaths, GetStaticProps } from 'next'
-import { getAllPosts, getPostContent } from '../../lib/blog-api'
+import { getAllPosts, getPostContent, PostContent } from '../../lib/blog-api'
 import Blog from '../../components/Blog'
 
 interface PostParams extends ParsedUrlQuery {
@@ -8,11 +8,13 @@ interface PostParams extends ParsedUrlQuery {
 }
 
 interface PostProps {
-  text: string
+  postContent: PostContent
 }
 
-const Post: React.VFC<PostProps> = (props) => {
-  return <Blog contents={props.text} />
+const Post: React.VFC<PostProps> = ({ postContent }) => {
+  return (
+    <Blog contents={postContent.htmlContent} metadata={postContent.metadata} />
+  )
 }
 
 export default Post
@@ -24,7 +26,7 @@ export const getStaticPaths: GetStaticPaths<PostParams> = async () => {
     fallback: false,
     paths: posts.map((post) => ({
       params: {
-        slug: post,
+        slug: post.slug,
       },
     })),
   }
@@ -40,11 +42,11 @@ export const getStaticProps: GetStaticProps<PostProps, PostParams> = async ({
     }
   }
 
-  const text = await getPostContent(slug)
+  const postContent = await getPostContent(slug)
 
   return {
     props: {
-      text,
+      postContent,
     },
   }
 }
