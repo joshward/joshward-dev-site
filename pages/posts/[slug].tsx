@@ -1,7 +1,9 @@
 import { ParsedUrlQuery } from 'querystring'
-import { GetStaticPaths, GetStaticProps } from 'next'
+import { GetStaticPaths, GetStaticProps, NextPage } from 'next'
+import Head from 'next/head'
 import { getAllPosts, getPostContent, PostContent } from '../../lib/blog-api'
-import Blog from '../../components/Blog'
+import BlogArticle from '../../components/BlogArticle'
+import BlogLayout from '../../components/BlogLayout'
 
 interface PostParams extends ParsedUrlQuery {
   slug: string
@@ -11,9 +13,17 @@ interface PostProps {
   postContent: PostContent
 }
 
-const Post: React.VFC<PostProps> = ({ postContent }) => {
+const Post: NextPage<PostProps> = ({ postContent }) => {
   return (
-    <Blog contents={postContent.htmlContent} metadata={postContent.metadata} />
+    <BlogLayout>
+      <Head>
+        <title>{postContent.metadata.title} - Blog - Josh Ward</title>
+      </Head>
+      <BlogArticle
+        contents={postContent.htmlContent}
+        metadata={postContent.metadata}
+      />
+    </BlogLayout>
   )
 }
 

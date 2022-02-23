@@ -5,6 +5,9 @@ const BaseLayout: React.FC = ({ children }) => {
     <div
       className="
         font-mono
+        bg-gray-800
+        text-gray-50
+        min-h-screen
         selection:bg-indigo-300 selection:text-gray-800
       "
     >
