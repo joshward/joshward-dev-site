@@ -1,13 +1,14 @@
 import type { NextPage } from 'next'
-import Head from 'next/head'
 import Header from '../components/Header'
+import PageHead from '../components/PageHead'
 
 const Home: NextPage = () => {
   return (
     <div>
-      <Head>
-        <title>Josh Ward</title>
-      </Head>
+      <PageHead
+        path="/"
+        description="Josh Ward is Software Engineer who constantly seeks to elevate the craft and build valuable software"
+      />
       <Header />
     </div>
   )

@@ -4,6 +4,7 @@ import Head from 'next/head'
 import { getAllPosts, getPostContent, PostContent } from '../../lib/blog-api'
 import BlogArticle from '../../components/BlogArticle'
 import BlogLayout from '../../components/BlogLayout'
+import PageHead from '../../components/PageHead'
 
 interface PostParams extends ParsedUrlQuery {
   slug: string
@@ -11,14 +12,17 @@ interface PostParams extends ParsedUrlQuery {
 
 interface PostProps {
   postContent: PostContent
+  slug: string
 }
 
-const Post: NextPage<PostProps> = ({ postContent }) => {
+const Post: NextPage<PostProps> = ({ postContent, slug }) => {
   return (
     <BlogLayout>
-      <Head>
-        <title>{postContent.metadata.title} - Blog - Josh Ward</title>
-      </Head>
+      <PageHead
+        path={`/posts/${slug}`}
+        description={postContent.metadata.excerpt}
+        title={`${postContent.metadata.title} - Blog`}
+      />
       <BlogArticle
         contents={postContent.htmlContent}
         metadata={postContent.metadata}
@@ -57,6 +61,7 @@ export const getStaticProps: GetStaticProps<PostProps, PostParams> = async ({
   return {
     props: {
       postContent,
+      slug,
     },
   }
 }

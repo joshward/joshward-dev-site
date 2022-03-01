@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import JoshImage from '../assets/josh.jpg'
+import EmailIcon from '../assets/email.svg'
 import GitHubIcon from '../assets/logo-github.svg'
 import LinkedInIcon from '../assets/logo-linkedin.svg'
 import ExternalIconLink from './ExternalIconLink'
@@ -63,14 +64,39 @@ const Header: React.VFC = () => {
           />
         </div>
       </div>
-      <div className="flex space-x-4 self-center">
-        <ExternalIconLink href="https://www.linkedin.com/in/joshwarddev">
-          <LinkedInIcon />
-        </ExternalIconLink>
 
-        <ExternalIconLink href="https://github.com/joshward">
-          <GitHubIcon />
-        </ExternalIconLink>
+      <div className="self-center">
+        <div className="flex justify-center space-x-4">
+          <ExternalIconLink
+            href="mailto:contact@joshward.dev"
+            title="Josh's Contact Email"
+          >
+            <EmailIcon aria-label="email icon" />
+          </ExternalIconLink>
+
+          <ExternalIconLink
+            href="https://www.linkedin.com/in/joshwarddev"
+            title="Josh's LinkedIn"
+          >
+            <LinkedInIcon aria-label="LinkedIn icon" />
+          </ExternalIconLink>
+
+          <ExternalIconLink
+            href="https://github.com/joshward"
+            title="Josh's Github"
+          >
+            <GitHubIcon aria-label="Github icon" />
+          </ExternalIconLink>
+        </div>
+
+        <div className="pt-5">
+          <a
+            className="text-indigo-300 hover:text-indigo-400 border-b border-dashed border-indigo-300 hover:border-indigo-400"
+            href="https://intellitect.com/employee-spotlight-josh-ward/"
+          >
+            Employee Spotlight Article
+          </a>
+        </div>
       </div>
     </div>
   )

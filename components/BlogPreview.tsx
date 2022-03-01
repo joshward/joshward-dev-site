@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { PostListDetails } from '../lib/blog-api'
-import { getBlogLink } from '../lib/utils'
+import { formatDate, getBlogLink } from '../lib/utils'
 
 const BlogPreview: React.VFC<PostListDetails> = ({
   title,
@@ -13,7 +13,9 @@ const BlogPreview: React.VFC<PostListDetails> = ({
       <a className="group">
         <div className="border border-solid border-slate-600 rounded p-5 group-hover:bg-slate-600">
           <h2 className="text-indigo-200 text-3xl pb-1">{title}</h2>
-          <h3 className="text-indigo-400 text-sm pb-5">{publishedDate}</h3>
+          <h3 className="text-indigo-400 text-sm pb-5">
+            {formatDate(publishedDate)}
+          </h3>
           <p className="text-indigo-100 text-sm">{excerpt}</p>
         </div>
       </a>

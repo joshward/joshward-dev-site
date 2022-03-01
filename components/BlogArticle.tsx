@@ -8,9 +8,13 @@ interface BlogProps {
 const BlogArticle: React.VFC<BlogProps> = ({ contents, metadata }) => {
   return (
     <article>
-      <h1 className="text-4xl">{metadata.title}</h1>
+      <h2 className="text-4xl text-indigo-200">{metadata.title}</h2>
       <div
-        className="prose"
+        className="
+          prose
+          text-slate-100
+          max-w-none
+        "
         dangerouslySetInnerHTML={{ __html: contents }}
       ></div>
     </article>

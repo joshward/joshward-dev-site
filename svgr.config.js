@@ -4,5 +4,6 @@ module.exports = {
   typescript: true,
   svgProps: {
     fill: 'currentColor',
+    'aria-hidden': true,
   },
 }
