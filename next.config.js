@@ -1,5 +1,7 @@
 /** @type {import('next').NextConfig} */
-module.exports = {
+const { withPlausibleProxy } = require('next-plausible')
+
+module.exports = withPlausibleProxy()({
   reactStrictMode: true,
   webpack(config) {
     config.module.rules.push({
@@ -9,4 +11,4 @@ module.exports = {
 
     return config
   },
-}
+})
